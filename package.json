@@ -15,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/zkpranav/aryaa-portfolio/issues"
   },
-  "homepage": "https://github.com/zkpranav/aryaa-portfolio#readme"
+  "homepage": "https://github.com/zkpranav/aryaa-portfolio#readme",
+  "devDependencies": {
+    "dat.gui": "^0.7.7",
+    "parcel": "^2.0.0-rc.0",
+    "sass": "^1.38.2"
+  },
+  "dependencies": {
+    "three": "^0.132.2"
+  }
 }
