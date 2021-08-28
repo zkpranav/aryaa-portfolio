@@ -1,0 +1,19 @@
+#bedroom-container {
+    position: absolute;
+    top: 0;
+    left: 10rem;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: end;
+}
+
+#bedroom-handle {
+    width: calc(100vw - 10rem);
+    height: 90vh;
+
+    // temp styles
+    border: 2px solid #000;
+    border-top: none;
+}
