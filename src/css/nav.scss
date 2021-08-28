@@ -1,12 +1,16 @@
 .menu-trigger {
+    position: relative;
+    z-index: 1;
+
     width: 3rem;
     height: 3rem;
     margin-left: 2rem;
     
     font-size: 2rem;
+    color: $primaryColor;
 
     background-color: $transparentBackground;
-    border: 2px solid #000;
+    border: 2px solid $primaryColor;
     border-top: none;
 
     display: flex;
@@ -15,11 +19,17 @@
     justify-content: center;
 
     // display: none;
+
+    &:hover {
+        background-color: $primaryColor;
+        color: $secondaryColor;
+        border-color: $secondaryColor;
+    }
 }
 
 .menu-items {
     margin-left: 2rem;
-    border: 2px solid #000;
+    border: 2px solid $primaryColor;
     border-top: none;
     width: 12rem;
     height: 12rem;
@@ -34,30 +44,38 @@
 
     li:not(:nth-child(1)) {
         align-self: center;
-        width: 7.5rem;
-        height: 2rem;
+        width: 100%;
+        padding: 0 1.5rem;
 
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: start;
+
+        text-transform: uppercase;
+    }
+
+    li:nth-child(4) {
+        margin-bottom: 1rem;
     }
 
     li a {
         text-decoration: none;
         color: inherit;
-        font-size: 1.5rem;
+        font-size: 1.2rem;
         font-weight: 500;
     }
 
     .menu-collapse {
         font-weight: 500;
         font-size: 1.5rem;
+        color: $secondaryColor;
+
         margin: 1rem;
 
         background-color: $transparentBackground;
         border: none;
     }
 
-    display: none;
+    display: flex;
 }

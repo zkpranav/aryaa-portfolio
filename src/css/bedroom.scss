@@ -1,7 +1,45 @@
+.frames {
+    $frameWidth: calc(2rem + 80vw);
+    $frameHeight: calc(2rem + 80vh);
+    
+    .frame-1 {
+        position: absolute;
+        top: 4rem;
+        left: 17rem;
+
+        width: $frameWidth;
+        height: $frameHeight;
+
+        background-color: $secondaryColor;
+    }
+
+    .frame-2 {
+        position: absolute;
+        top: 0rem;
+        left: 15rem;
+
+        width: $frameWidth;
+        height: $frameHeight;
+
+        background-color: lighten($primaryColor, 20%);
+    }
+
+    .frame-3 {
+        position: absolute;
+        top: 2rem;
+        left: 12rem;
+
+        width: $frameWidth;
+        height: $frameHeight;
+
+        background-color: $primaryColor;
+    }
+}
+
 #bedroom-container {
     position: absolute;
-    top: 0;
-    left: 10rem;
+    top: 3rem;
+    left: 13rem;
 
     display: flex;
     flex-flow: row nowrap;
@@ -10,11 +48,9 @@
 }
 
 #bedroom-handle {
-    width: calc(100vw - 10rem);
-    height: 90vh;
+    width: 80vw;
+    height: 80vh;
 
     // temp styles
     border: 2px solid #000;
-    border-top: none;
-    border-right: none;
 }

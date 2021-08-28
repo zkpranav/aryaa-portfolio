@@ -2,3 +2,8 @@
 @import './normalize.scss';
 @import './nav.scss';
 @import './bedroom.scss';
+
+body {
+    background-color: $backgroundColor;
+    color: #fff;
+}
