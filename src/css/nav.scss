@@ -69,13 +69,16 @@
     .menu-collapse {
         font-weight: 500;
         font-size: 1.5rem;
+        font-style: italic;
         color: $secondaryColor;
 
         margin: 1rem;
+        width: 2rem;
+        height: 2rem;
 
         background-color: $transparentBackground;
         border: none;
     }
 
-    display: flex;
+    display: none;
 }

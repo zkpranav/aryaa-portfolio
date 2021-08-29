@@ -54,3 +54,17 @@
     // temp styles
     border: 2px solid #000;
 }
+
+#bedroom-toggle {
+    position: absolute;
+    bottom: 10%;
+    left: 45%;
+
+    height: 2rem;
+    width: 7rem;
+
+    background-color: $transparentBackground;
+    border: 2px solid $secondaryColor;
+
+    color: $secondaryColor;
+}
