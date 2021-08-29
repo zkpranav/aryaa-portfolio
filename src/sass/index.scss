@@ -1,9 +1,14 @@
-@import './variables.scss';
+@import './_variables.scss';
 @import './normalize.scss';
 @import './nav.scss';
 @import './bedroom.scss';
+@import './main.scss';
 
 body {
     background-color: $backgroundColor;
     color: #fff;
+}
+
+.does-not-exist {
+    font-size: 4px;
 }

@@ -1,0 +1,66 @@
+.menu-trigger {
+  position: relative;
+  z-index: 1;
+  width: 3rem;
+  height: 3rem;
+  margin-left: 2rem;
+  font-size: 2rem;
+  color: rgba(205, 45, 45, 0.75);
+  background-color: transparent;
+  border: 2px solid rgba(205, 45, 45, 0.75);
+  border-top: none;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+}
+.menu-trigger:hover {
+  background-color: rgba(205, 45, 45, 0.75);
+  color: rgba(50, 194, 157, 0.75);
+  border-color: rgba(50, 194, 157, 0.75);
+}
+
+.menu-items {
+  margin-left: 2rem;
+  border: 2px solid rgba(205, 45, 45, 0.75);
+  border-top: none;
+  width: 12rem;
+  height: 12rem;
+  list-style-type: none;
+  background-color: transparent;
+  flex-flow: column nowrap;
+  justify-content: space-around;
+  display: none;
+}
+.menu-items li:not(:nth-child(1)) {
+  align-self: center;
+  width: 100%;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: start;
+  text-transform: uppercase;
+}
+.menu-items li:nth-child(4) {
+  margin-bottom: 1rem;
+}
+.menu-items li a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.menu-items .menu-collapse {
+  font-weight: 500;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: rgba(50, 194, 157, 0.75);
+  margin: 1rem;
+  width: 2rem;
+  height: 2rem;
+  background-color: transparent;
+  border: none;
+}
+
+/*# sourceMappingURL=nav.css.map */

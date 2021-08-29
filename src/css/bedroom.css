@@ -1,0 +1,53 @@
+.frames .frame-1 {
+  position: absolute;
+  top: 4rem;
+  left: 17rem;
+  width: calc(2rem + 80vw);
+  height: calc(2rem + 80vh);
+  background-color: rgba(50, 194, 157, 0.75);
+}
+.frames .frame-2 {
+  position: absolute;
+  top: 0rem;
+  left: 15rem;
+  width: calc(2rem + 80vw);
+  height: calc(2rem + 80vh);
+  background-color: rgba(227, 125, 125, 0.75);
+}
+.frames .frame-3 {
+  position: absolute;
+  top: 2rem;
+  left: 12rem;
+  width: calc(2rem + 80vw);
+  height: calc(2rem + 80vh);
+  background-color: rgba(205, 45, 45, 0.75);
+}
+
+#bedroom-container {
+  position: absolute;
+  top: 3rem;
+  left: 13rem;
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: end;
+}
+
+#bedroom-handle {
+  width: 80vw;
+  height: 80vh;
+  border: 2px solid #000;
+}
+
+#bedroom-toggle {
+  position: absolute;
+  bottom: 10%;
+  left: 45%;
+  height: 2rem;
+  width: 7rem;
+  background-color: transparent;
+  border: 2px solid rgba(50, 194, 157, 0.75);
+  color: rgba(50, 194, 157, 0.75);
+}
+
+/*# sourceMappingURL=bedroom.css.map */
