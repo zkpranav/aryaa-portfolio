@@ -384,15 +384,12 @@ template {
 .menu-items li:not(:nth-child(1)) {
   align-self: center;
   width: 100%;
-  padding: 0 1.5rem;
+  padding: 0.5rem 1.5rem;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: start;
   text-transform: uppercase;
-}
-.menu-items li:nth-child(4) {
-  margin-bottom: 1rem;
 }
 .menu-items li a {
   text-decoration: none;
@@ -426,7 +423,7 @@ template {
   left: 15rem;
   width: calc(2rem + 80vw);
   height: calc(2rem + 80vh);
-  background-color: rgba(227, 125, 125, 0.75);
+  background-color: rgba(217, 84, 84, 0.75);
 }
 .frames .frame-3 {
   position: absolute;
@@ -458,7 +455,7 @@ template {
   bottom: 10%;
   left: 45%;
   height: 2rem;
-  width: 7rem;
+  width: 8rem;
   background-color: transparent;
   border: 2px solid rgba(50, 194, 157, 0.75);
   color: rgba(50, 194, 157, 0.75);
@@ -467,16 +464,20 @@ template {
 main {
   margin: 2rem;
   margin-top: 100vh;
-  font-size: 2rem;
+  font-size: 4rem;
+}
+main .inject {
+  border-right: 3px solid rgba(50, 194, 157, 0.75);
+}
+main .aryaa {
+  font-weight: bold;
+  color: rgba(0, 244, 181, 0.75);
+  text-shadow: 0.2rem 0.2rem rgba(205, 45, 45, 0.75);
 }
 
 body {
   background-color: #201513;
   color: #fff;
-}
-
-.does-not-exist {
-  font-size: 4px;
 }
 
 /*# sourceMappingURL=index.css.map */

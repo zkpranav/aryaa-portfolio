@@ -12,7 +12,7 @@
   left: 15rem;
   width: calc(2rem + 80vw);
   height: calc(2rem + 80vh);
-  background-color: rgba(227, 125, 125, 0.75);
+  background-color: rgba(217, 84, 84, 0.75);
 }
 .frames .frame-3 {
   position: absolute;
@@ -44,7 +44,7 @@
   bottom: 10%;
   left: 45%;
   height: 2rem;
-  width: 7rem;
+  width: 8rem;
   background-color: transparent;
   border: 2px solid rgba(50, 194, 157, 0.75);
   color: rgba(50, 194, 157, 0.75);

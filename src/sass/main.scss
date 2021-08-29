@@ -4,5 +4,15 @@ main {
     margin: 2rem;
     margin-top: 100vh;
 
-    font-size: 2rem;
+    font-size: 4rem;
+
+    .inject {
+        border-right: 3px solid $secondaryColor;
+    }
+
+    .aryaa {
+        font-weight: bold;
+        color: saturate($secondaryColor, 100%);
+        text-shadow: 0.2rem 0.2rem $primaryColor;
+    }
 }

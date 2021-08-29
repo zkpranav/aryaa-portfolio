@@ -1,7 +1,15 @@
 main {
   margin: 2rem;
   margin-top: 100vh;
-  font-size: 2rem;
+  font-size: 4rem;
+}
+main .inject {
+  border-right: 3px solid rgba(50, 194, 157, 0.75);
+}
+main .aryaa {
+  font-weight: bold;
+  color: rgba(0, 244, 181, 0.75);
+  text-shadow: 0.2rem 0.2rem rgba(205, 45, 45, 0.75);
 }
 
 /*# sourceMappingURL=main.css.map */

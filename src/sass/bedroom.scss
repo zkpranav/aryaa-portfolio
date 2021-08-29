@@ -23,7 +23,7 @@
         width: $frameWidth;
         height: $frameHeight;
 
-        background-color: lighten($primaryColor, 20%);
+        background-color: lighten($primaryColor, 10%);
     }
 
     .frame-3 {
@@ -63,7 +63,7 @@
     left: 45%;
 
     height: 2rem;
-    width: 7rem;
+    width: 8rem;
 
     background-color: transparent;
     border: 2px solid $secondaryColor;

@@ -35,15 +35,12 @@
 .menu-items li:not(:nth-child(1)) {
   align-self: center;
   width: 100%;
-  padding: 0 1.5rem;
+  padding: 0.5rem 1.5rem;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: start;
   text-transform: uppercase;
-}
-.menu-items li:nth-child(4) {
-  margin-bottom: 1rem;
 }
 .menu-items li a {
   text-decoration: none;
