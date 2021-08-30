@@ -16,8 +16,8 @@
 }
 .menu-trigger:hover {
   background-color: rgba(205, 45, 45, 0.75);
-  color: rgba(50, 194, 157, 0.75);
-  border-color: rgba(50, 194, 157, 0.75);
+  color: rgba(0, 244, 181, 0.75);
+  border-color: rgba(0, 244, 181, 0.75);
 }
 
 .menu-items {

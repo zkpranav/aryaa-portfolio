@@ -9,7 +9,7 @@
 .frames .frame-2 {
   position: absolute;
   top: 0vh;
-  right: 0.7vw;
+  right: 1.5vw;
   width: 78vw;
   height: 80vh;
   background-color: rgba(217, 84, 84, 0.75);
@@ -53,8 +53,8 @@
 }
 #bedroom-toggle:hover {
   background-color: rgba(205, 45, 45, 0.75);
-  color: rgba(50, 194, 157, 0.75);
-  border-color: rgba(50, 194, 157, 0.75);
+  color: rgba(0, 244, 181, 0.75);
+  border-color: rgba(0, 244, 181, 0.75);
 }
 
 /*# sourceMappingURL=bedroom.css.map */
