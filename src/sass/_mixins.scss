@@ -1,0 +1,21 @@
+@mixin buttonWithBorder () {
+    color: $primaryColor;
+
+    background-color: transparent;
+    border: 2px solid $primaryColor;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+
+    transition-property: color border-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+
+    &:hover {
+        background-color: $primaryColor;
+        color: $secondaryColor;
+        border-color: $secondaryColor;
+    }
+}

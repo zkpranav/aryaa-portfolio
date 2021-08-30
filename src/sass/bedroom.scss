@@ -1,47 +1,36 @@
 @import './_variables.scss';
+@import './_mixins.scss';
 
 .frames {
-    $frameWidth: calc(2rem + 80vw);
-    $frameHeight: calc(2rem + 80vh);
-    
     .frame-1 {
         position: absolute;
-        top: 4rem;
-        left: 17rem;
+        top: 12vh;
+        left: 25.5vw;
 
-        width: $frameWidth;
-        height: $frameHeight;
+        width: calc(75vw - 0.7vw);
+        height: calc(80vh + 5vh);
 
         background-color: $secondaryColor;
     }
 
     .frame-2 {
         position: absolute;
-        top: 0rem;
-        left: 15rem;
+        top: 0vh;
+        right: 0.7vw;
 
-        width: $frameWidth;
-        height: $frameHeight;
+        width: 78vw;
+        height: 80vh;
 
         background-color: lighten($primaryColor, 10%);
-    }
-
-    .frame-3 {
-        position: absolute;
-        top: 2rem;
-        left: 12rem;
-
-        width: $frameWidth;
-        height: $frameHeight;
-
-        background-color: $primaryColor;
     }
 }
 
 #bedroom-container {
     position: absolute;
-    top: 3rem;
-    left: 13rem;
+    top: 5vh;
+    left: 17.5vw;
+    
+    border: 2vw solid $primaryColor;
 
     display: flex;
     flex-flow: row nowrap;
@@ -50,23 +39,24 @@
 }
 
 #bedroom-handle {
-    width: 80vw;
+    width: 75vw;
     height: 80vh;
 
     // temp styles
-    border: 2px solid #000;
+    // border: 2px solid #000;
 }
 
 #bedroom-toggle {
     position: absolute;
-    bottom: 10%;
+    bottom: 8%;
     left: 45%;
 
-    height: 2rem;
-    width: 8rem;
+    font-size: 1.2vw;
+    padding: 0.5vw;
 
-    background-color: transparent;
-    border: 2px solid $secondaryColor;
+    &:hover {
+        transform: scale(1.2);
+    }
 
-    color: $secondaryColor;
+    @include buttonWithBorder()
 }

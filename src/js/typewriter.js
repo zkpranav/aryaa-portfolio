@@ -1,20 +1,20 @@
 window.addEventListener('load', function handleTypewriting() {
-	var elements = document.getElementsByClassName('typewriter')
+	const elements = document.querySelectorAll('.typewriter')
+    const injectElements = document.querySelectorAll('.inject')
 	for (let i = 0; i < elements.length; i++) {
-		var toRotate = elements[i].getAttribute('data-sentences')
-		var period = elements[i].getAttribute('data-period')
+        const injectElement = injectElements[i]
+		const toRotate = elements[i].getAttribute('data-sentences')
 		if (toRotate) {
-			new Typewriter(elements[i], JSON.parse(toRotate), period)
+			new Typewriter(elements[i], JSON.parse(toRotate), injectElement)
 		}
 	}
 })
 
 class Typewriter {
-    constructor(element, toRotate, period) {
+    constructor(element, toRotate, injectElement) {
         this.element = element
-        this.injectElement = document.querySelector('.inject')
+        this.injectElement = injectElement
         this.toRotate = toRotate
-        this.period = parseInt(period, 10) || 2000
         this.rotationPointer = 0
         this.text = ''
 

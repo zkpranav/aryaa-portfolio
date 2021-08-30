@@ -1,18 +1,41 @@
 @import './_variables.scss';
+@import './_mixins.scss';
 
 main {
     margin: 2rem;
     margin-top: 100vh;
 
-    font-size: 4rem;
+    font-size: 1.5rem;
+    line-height: 3rem;
 
-    .inject {
-        border-right: 3px solid $secondaryColor;
+    p {
+        font-size: 3rem;
+    }
+    
+    .hi {
+        display: block;
+        font-size: 5rem;
     }
 
     .aryaa {
+        font-size: 5rem;
         font-weight: bold;
         color: saturate($secondaryColor, 100%);
         text-shadow: 0.2rem 0.2rem $primaryColor;
+    }
+
+    .inject {
+        border-right: 3px solid $secondaryColor;
+    
+        color: saturate($secondaryColor, 100%);
+        text-shadow: 0.2rem 0.2rem $primaryColor;
+    }
+
+    .about {
+        @include buttonWithBorder();
+
+        width: 8rem;
+        height: 2.5rem;
+        margin-top: 1rem;
     }
 }

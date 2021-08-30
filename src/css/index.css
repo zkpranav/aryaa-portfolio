@@ -11,6 +11,7 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */
   font-family: Helvetica, Arial, sans-serif;
+  font-size: 1.14285714vw;
 }
 
 /* Sections
@@ -348,20 +349,20 @@ template {
 }
 
 .menu-trigger {
-  position: relative;
-  z-index: 1;
-  width: 3rem;
-  height: 3rem;
-  margin-left: 2rem;
-  font-size: 2rem;
+  margin-left: 3vw;
+  padding: 0.25vw 0.7vw;
+  font-size: 2.5vw;
   color: rgba(205, 45, 45, 0.75);
   background-color: transparent;
   border: 2px solid rgba(205, 45, 45, 0.75);
-  border-top: none;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: center;
+  transition-property: color border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  border-top: none;
 }
 .menu-trigger:hover {
   background-color: rgba(205, 45, 45, 0.75);
@@ -370,13 +371,15 @@ template {
 }
 
 .menu-items {
-  margin-left: 2rem;
+  position: absolute;
+  top: 0;
+  left: 3vw;
+  z-index: 1;
+  min-width: 14vw;
   border: 2px solid rgba(205, 45, 45, 0.75);
   border-top: none;
-  width: 12rem;
-  height: 12rem;
   list-style-type: none;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.65);
   flex-flow: column nowrap;
   justify-content: space-around;
   display: none;
@@ -384,60 +387,68 @@ template {
 .menu-items li:not(:nth-child(1)) {
   align-self: center;
   width: 100%;
-  padding: 0.5rem 1.5rem;
+  padding: 1vw 2vw;
+  font-size: 1.5vw;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: start;
-  text-transform: uppercase;
+}
+.menu-items li:nth-last-child(1) {
+  margin-bottom: 1vw;
 }
 .menu-items li a {
+  text-transform: uppercase;
   text-decoration: none;
   color: inherit;
-  font-size: 1.2rem;
-  font-weight: 500;
+  transition-property: color;
+  transition-duration: 0.3s;
+  transition-timing-function: ease-out;
+}
+.menu-items li a:hover {
+  color: rgba(0, 244, 181, 0.75);
 }
 .menu-items .menu-collapse {
   font-weight: 500;
-  font-size: 1.5rem;
-  font-style: italic;
+  font-size: 2.5vw;
   color: rgba(50, 194, 157, 0.75);
-  margin: 1rem;
-  width: 2rem;
-  height: 2rem;
+  margin: 1vw;
+  width: 3.5vw;
+  height: 3.5vw;
   background-color: transparent;
   border: none;
+  transform-origin: 50% 50%;
+  transform: rotate(-20deg);
+  transition-property: color;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-out;
+}
+.menu-items .menu-collapse:hover {
+  color: rgba(0, 244, 181, 0.75);
 }
 
 .frames .frame-1 {
   position: absolute;
-  top: 4rem;
-  left: 17rem;
-  width: calc(2rem + 80vw);
-  height: calc(2rem + 80vh);
+  top: 12vh;
+  left: 25.5vw;
+  width: calc(75vw - 0.7vw);
+  height: calc(80vh + 5vh);
   background-color: rgba(50, 194, 157, 0.75);
 }
 .frames .frame-2 {
   position: absolute;
-  top: 0rem;
-  left: 15rem;
-  width: calc(2rem + 80vw);
-  height: calc(2rem + 80vh);
+  top: 0vh;
+  right: 0.7vw;
+  width: 78vw;
+  height: 80vh;
   background-color: rgba(217, 84, 84, 0.75);
-}
-.frames .frame-3 {
-  position: absolute;
-  top: 2rem;
-  left: 12rem;
-  width: calc(2rem + 80vw);
-  height: calc(2rem + 80vh);
-  background-color: rgba(205, 45, 45, 0.75);
 }
 
 #bedroom-container {
   position: absolute;
-  top: 3rem;
-  left: 13rem;
+  top: 5vh;
+  left: 17.5vw;
+  border: 2vw solid rgba(205, 45, 45, 0.75);
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
@@ -445,34 +456,79 @@ template {
 }
 
 #bedroom-handle {
-  width: 80vw;
+  width: 75vw;
   height: 80vh;
-  border: 2px solid #000;
 }
 
 #bedroom-toggle {
   position: absolute;
-  bottom: 10%;
+  bottom: 8%;
   left: 45%;
-  height: 2rem;
-  width: 8rem;
+  font-size: 1.2vw;
+  padding: 0.5vw;
+  color: rgba(205, 45, 45, 0.75);
   background-color: transparent;
-  border: 2px solid rgba(50, 194, 157, 0.75);
+  border: 2px solid rgba(205, 45, 45, 0.75);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  transition-property: color border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+}
+#bedroom-toggle:hover {
+  transform: scale(1.2);
+}
+#bedroom-toggle:hover {
+  background-color: rgba(205, 45, 45, 0.75);
   color: rgba(50, 194, 157, 0.75);
+  border-color: rgba(50, 194, 157, 0.75);
 }
 
 main {
   margin: 2rem;
   margin-top: 100vh;
-  font-size: 4rem;
+  font-size: 1.5rem;
+  line-height: 3rem;
 }
-main .inject {
-  border-right: 3px solid rgba(50, 194, 157, 0.75);
+main p {
+  font-size: 3rem;
+}
+main .hi {
+  display: block;
+  font-size: 5rem;
 }
 main .aryaa {
+  font-size: 5rem;
   font-weight: bold;
   color: rgba(0, 244, 181, 0.75);
   text-shadow: 0.2rem 0.2rem rgba(205, 45, 45, 0.75);
+}
+main .inject {
+  border-right: 3px solid rgba(50, 194, 157, 0.75);
+  color: rgba(0, 244, 181, 0.75);
+  text-shadow: 0.2rem 0.2rem rgba(205, 45, 45, 0.75);
+}
+main .about {
+  color: rgba(205, 45, 45, 0.75);
+  background-color: transparent;
+  border: 2px solid rgba(205, 45, 45, 0.75);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  transition-property: color border-color;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-out;
+  width: 8rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+}
+main .about:hover {
+  background-color: rgba(205, 45, 45, 0.75);
+  color: rgba(50, 194, 157, 0.75);
+  border-color: rgba(50, 194, 157, 0.75);
 }
 
 body {
