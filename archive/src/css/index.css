@@ -499,11 +499,12 @@ template {
 #introduction p {
   font-size: 2.5rem;
 }
-#introduction .hello {
+#introduction #hello {
   display: block;
   font-size: 5rem;
+  cursor: default;
 }
-#introduction .aryaa {
+#introduction #aryaa {
   font-size: 5rem;
   color: rgba(0, 244, 181, 0.75);
   text-shadow: 0.2rem 0.2rem rgba(205, 45, 45, 0.75);
@@ -513,7 +514,7 @@ template {
   color: rgba(0, 244, 181, 0.75);
   text-shadow: 0.2rem 0.2rem rgba(205, 45, 45, 0.75);
 }
-#introduction .about {
+#introduction #resume {
   color: rgba(205, 45, 45, 0.75);
   background-color: transparent;
   border: 2px solid rgba(205, 45, 45, 0.75);
@@ -528,12 +529,15 @@ template {
   height: 2.5rem;
   margin-top: 1rem;
 }
-#introduction .about:hover {
+#introduction #resume:hover {
   background-color: rgba(205, 45, 45, 0.75);
   color: rgba(0, 244, 181, 0.75);
   border-color: rgba(0, 244, 181, 0.75);
 }
 
+#projects {
+  margin: 3vw;
+}
 body {
   background-color: #201513;
   color: #fff;
