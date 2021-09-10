@@ -10,17 +10,16 @@
     "type": "git",
     "url": "git+https://github.com/zkpranav/aryaa-portfolio.git"
   },
-  "author": "Pranav Kandalgaonkar",
+  "author": "Pranav Kandalgaonkar zkpranav@icloud.com",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zkpranav/aryaa-portfolio/issues"
   },
   "homepage": "https://github.com/zkpranav/aryaa-portfolio#readme",
+  "private": true,
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.0.0-rc.0",
-    "dat.gui": "^0.7.7",
     "parcel": "^2.0.0-rc.0",
-    "sass": "^1.38.2"
+    "sass": "^1.39.2"
   },
   "dependencies": {
     "gsap": "^3.7.1",
