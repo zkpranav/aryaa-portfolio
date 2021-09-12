@@ -1,30 +1,17 @@
 .menu-trigger {
     font-size: 10.5vw;
-    @include breakpoints-up(medium) {
-        font-size: 2.5vw;
-    }
 
-    margin: -0.4vw 0 0 1.75vw;
+    margin: -0.4vw 0 0 2vw;
 }
 
 .menu {
-    display: flex;
-    flex-flow: column nowrap;
-    align-content: center; 
-
-    position: fixed;
+    position: absolute;
     top: 0;
-    left: 1.75%;
+    left: 2%;
     z-index: 1;
 
-    background-color: hsla(0, 0, 0, 0.9);
-    @include breakpoints-down(medium) {
-        width: 90%;
-    }
-    @include breakpoints-up(medium) {
-        min-width: 14vw;
-        background-color: hsla(0, 0, 0, 0.65);
-    }
+    background-color: hsla(0, 0%, 0%, 0.9);
+    min-width: 90%;
 
     border: 2px solid $primaryColor;
     border-top: 0;
@@ -32,45 +19,44 @@
     list-style: none;
 
     .menu-collapse {
-        font-size: 12vw;
-        line-height: 12vw;
-        margin-bottom: 15%;
-        @include breakpoints-up(medium) {
-            font-size: 3vw;
-            line-height: 3vw;
-            margin-bottom: 10%;
-        }
+        font: 5vw/5vw 'Comic Sans MS', sans-serif;
+        font-size: 10vw;
+        line-height: 10vw;
+        margin-bottom: 5%;
 
         cursor: pointer;
         background: none;
         border: 0;
-        color: $secondaryColor;
-        font-weight: 500;
+        color: saturate($secondaryColor, 100%);
+        font-weight: bold;
         transform: rotate(-15deg);
     }
 
     li:not(:first-child) {
         margin: 5% 0;
         padding: 0 10%;
-        @include breakpoints-up(medium) {
-            padding: 0;
-        }
-
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: flex-start;
-        align-items: center;
 
         a {
+            // TODO: Get League Gothic font
+            // font: 4vw/4vw 'League gothic', Impact, sans-serif;
+            font: 4vw/4vw 'Pathway Gothic One', sans-serif;
+            font-weight: bold;
+
             font-size: 12vw;
             line-height: 12vw;
-            @include breakpoints-up(medium) {
-                font-size: 2vw;
-                line-height: 2vw;
-            }
 
             margin: 0;
+            padding: 0;
             text-transform: uppercase;
         }
     }
+
+    #contact-pencil {
+        display: inline-block;
+        font-size: 6vw;
+
+        transform: translateY(-5vw);
+    }
+
+    display: none;
 }

@@ -1,14 +1,13 @@
-$breakpoints-up: ("medium": "640px", "large": "1024px", "xlarge": "1400px");
-$breakpoints-down: ("small": "630px", "medium": "1023px", "large": "1399px");
+$breakpoints: ('iphone': '480px', 'ipad': '768px', 'macbook': '1024px', 'imac': '1280px');
 
 @mixin breakpoints-up($size) {
-    @media screen and (min-width: map-get($map: $breakpoints-up, $key: $size)) {
+    @media screen and (min-width: map-get($map: $breakpoints, $key: $size)) {
         @content;
     }
 }
 
 @mixin breakpoints-down($size) {
-    @media screen and (max-width: map-get($map: $breakpoints-down, $key: $size)) {
+    @media screen and (max-width: map-get($map: $breakpoints, $key: $size)) {
         @content;
     }
 }

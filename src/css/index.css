@@ -40,81 +40,51 @@ a, a:visited, a:hover {
 
 .menu-trigger {
   font-size: 10.5vw;
-  margin: -0.4vw 0 0 1.75vw;
-}
-@media screen and (min-width: 640px) {
-  .menu-trigger {
-    font-size: 2.5vw;
-  }
+  margin: -0.4vw 0 0 2vw;
 }
 
 .menu {
-  display: flex;
-  flex-flow: column nowrap;
-  align-content: center;
-  position: fixed;
+  position: absolute;
   top: 0;
-  left: 1.75%;
+  left: 2%;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.9);
+  min-width: 90%;
   border: 2px solid rgba(205, 45, 45, 0.75);
   border-top: 0;
   padding: 2.5%;
   list-style: none;
-}
-@media screen and (max-width: 1023px) {
-  .menu {
-    width: 90%;
-  }
-}
-@media screen and (min-width: 640px) {
-  .menu {
-    min-width: 14vw;
-    background-color: rgba(0, 0, 0, 0.65);
-  }
+  display: none;
 }
 .menu .menu-collapse {
-  font-size: 12vw;
-  line-height: 12vw;
-  margin-bottom: 15%;
+  font: 5vw/5vw "Comic Sans MS", sans-serif;
+  font-size: 10vw;
+  line-height: 10vw;
+  margin-bottom: 5%;
   cursor: pointer;
   background: none;
   border: 0;
-  color: rgba(50, 195, 159, 0.75);
-  font-weight: 500;
+  color: rgba(0, 245, 184, 0.75);
+  font-weight: bold;
   transform: rotate(-15deg);
-}
-@media screen and (min-width: 640px) {
-  .menu .menu-collapse {
-    font-size: 3vw;
-    line-height: 3vw;
-    margin-bottom: 10%;
-  }
 }
 .menu li:not(:first-child) {
   margin: 5% 0;
   padding: 0 10%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: flex-start;
-  align-items: center;
-}
-@media screen and (min-width: 640px) {
-  .menu li:not(:first-child) {
-    padding: 0;
-  }
 }
 .menu li:not(:first-child) a {
+  font: 4vw/4vw "Pathway Gothic One", sans-serif;
+  font-weight: bold;
   font-size: 12vw;
   line-height: 12vw;
   margin: 0;
+  padding: 0;
   text-transform: uppercase;
 }
-@media screen and (min-width: 640px) {
-  .menu li:not(:first-child) a {
-    font-size: 2vw;
-    line-height: 2vw;
-  }
+.menu #contact-pencil {
+  display: inline-block;
+  font-size: 6vw;
+  transform: translateY(-5vw);
 }
 
 /*# sourceMappingURL=index.css.map */
