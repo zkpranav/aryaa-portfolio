@@ -13,8 +13,8 @@ body {
 
 *, *::before, *::after {
   box-sizing: inherit;
-  margin: inherit;
-  padding: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 a, a:visited, a:hover {
@@ -26,9 +26,8 @@ a, a:visited, a:hover {
   background-color: transparent;
   border: 2px solid rgba(205, 45, 45, 0.75);
   color: rgba(205, 45, 45, 0.75);
-  padding: 0.25vw 0.7vw;
   cursor: pointer;
-  transition-property: color border-color background-color;
+  transition-property: color, border-color, background-color;
   transition-duration: 0.25s;
   transition-timing-function: ease-out;
 }
@@ -38,15 +37,24 @@ a, a:visited, a:hover {
   color: rgba(0, 245, 184, 0.75);
 }
 
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
 .menu-trigger {
   font-size: 10.5vw;
-  margin: -0.4vw 0 0 2vw;
+  margin: -0.4vw 0 0 5%;
+  padding: 0.25vw 0.7vw;
 }
 
 .menu {
   position: absolute;
   top: 0;
-  left: 2%;
+  left: 5%;
   z-index: 1;
   background-color: rgba(0, 0, 0, 0.9);
   min-width: 90%;
@@ -81,10 +89,24 @@ a, a:visited, a:hover {
   padding: 0;
   text-transform: uppercase;
 }
-.menu #contact-pencil {
+.menu .emoji {
   display: inline-block;
   font-size: 6vw;
   transform: translateY(-5vw);
+}
+
+.bedroom {
+  position: relative;
+  width: 90%;
+  height: 50vh;
+  margin: 20vw 0 0 5%;
+  border: 2px solid rgba(205, 45, 45, 0.75);
+}
+.bedroom .bedroom-trigger {
+  position: absolute;
+  bottom: 10%;
+  left: calc(50% - ((95px + 1.4vw + 4px) / 2));
+  padding: 0.25rem 0.5rem;
 }
 
 /*# sourceMappingURL=index.css.map */

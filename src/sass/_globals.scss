@@ -13,8 +13,8 @@ body {
 
 *, *::before, *::after {
     box-sizing: inherit;
-    margin: inherit;
-    padding: inherit;
+    margin: 0;
+    padding: 0;
 }
 
 a, a:visited, a:hover {
@@ -26,9 +26,8 @@ a, a:visited, a:hover {
     background-color: transparent;
     border: 2px solid $primaryColor;
     color: $primaryColor;
-    padding: 0.25vw 0.7vw;
     cursor: pointer;
-    transition-property: color border-color background-color;
+    transition-property: color, border-color, background-color;
     transition-duration: 0.25s;
     transition-timing-function: ease-out;
 

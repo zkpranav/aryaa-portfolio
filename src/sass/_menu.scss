@@ -1,13 +1,22 @@
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+}
+
 .menu-trigger {
     font-size: 10.5vw;
 
-    margin: -0.4vw 0 0 2vw;
+    margin: -0.4vw 0 0 5%;
+    padding: 0.25vw 0.7vw;
 }
 
 .menu {
     position: absolute;
     top: 0;
-    left: 2%;
+    left: 5%;
     z-index: 1;
 
     background-color: hsla(0, 0%, 0%, 0.9);
@@ -51,7 +60,7 @@
         }
     }
 
-    #contact-pencil {
+    .emoji {
         display: inline-block;
         font-size: 6vw;
 

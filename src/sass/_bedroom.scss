@@ -1,0 +1,17 @@
+.bedroom {
+    position: relative;
+    width: 90%;
+    height: 50vh;
+    margin: 20vw 0 0 5%;
+
+    border: 2px solid $primaryColor;
+
+    .bedroom-trigger {
+        position: absolute;
+        bottom: 10%; 
+        // Changes based on font-size (5.93 * font-size) + padding + border
+        left: calc(50% - ((95px + 1.4vw + 4px) / 2));
+
+        padding: 0.25rem 0.5rem;
+    }
+}
