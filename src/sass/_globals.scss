@@ -1,0 +1,40 @@
+html {
+    font-size: 100%;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: $backgroundColor;
+    color: #ffffff;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+    margin: inherit;
+    padding: inherit;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+    color: inherit;
+}
+
+.button {
+    background-color: transparent;
+    border: 2px solid $primaryColor;
+    color: $primaryColor;
+    padding: 0.25vw 0.7vw;
+    cursor: pointer;
+    transition-property: color border-color background-color;
+    transition-duration: 0.25s;
+    transition-timing-function: ease-out;
+
+    &:hover {
+        background-color: $primaryColor;
+        border-color: saturate($secondaryColor, 100%);;
+        color: saturate($secondaryColor, 100%);
+    }
+}
