@@ -9,6 +9,7 @@ body {
   background-color: #201513;
   color: #ffffff;
   font-family: Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
 *, *::before, *::after {
@@ -50,6 +51,7 @@ nav {
   font-size: 10.5vw;
   margin: -0.4vw 0 0 5%;
   padding: 0.25vw 0.7vw;
+  background-color: rgba(0, 0, 0, 0.9);
   border-top: 0;
 }
 
@@ -89,6 +91,9 @@ nav {
   margin: 0;
   padding: 0;
   text-transform: uppercase;
+}
+.menu li:not(:first-child) a:hover {
+  text-decoration: underline;
 }
 .menu .emoji {
   display: inline-block;
@@ -155,6 +160,50 @@ nav {
   bottom: 10%;
   left: calc(50% - ((95px + 1.4vw + 4px) / 2));
   padding: 0.25rem 0.5rem;
+}
+
+.introduction {
+  border: 2px solid rgba(205, 45, 45, 0.75);
+  font: 4vw/4vw "Pathway Gothic One", sans-serif;
+  margin-top: 10%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: stretch;
+  font-size: 6vw;
+  line-height: 6vw;
+}
+.introduction .movie-main {
+  padding-top: 4vw;
+  font-size: 10vw;
+  line-height: 10vw;
+}
+.introduction .movie-main * {
+  margin-left: 65%;
+}
+.introduction .movie-main p:nth-child(2) {
+  padding-left: 7vw;
+}
+.introduction .movie-main p:nth-child(3) {
+  text-transform: uppercase;
+  font-size: 5vw;
+}
+.introduction .movie-main p:nth-child(5) {
+  text-transform: uppercase;
+  font-size: 5vw;
+}
+.introduction .movie-name {
+  font-size: 12vw;
+  line-height: 12vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  margin: 20% 0;
+  transform-origin: 50% 50%;
+  transform: rotate(5deg);
+}
+.introduction .movie-footer {
+  padding: 4vw;
+  padding-top: 0;
 }
 
 /*# sourceMappingURL=index.css.map */
