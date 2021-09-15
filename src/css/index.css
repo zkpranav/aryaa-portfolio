@@ -43,6 +43,7 @@ nav {
   left: 0;
   width: 100%;
   height: auto;
+  z-index: 1;
 }
 
 .menu-trigger {
@@ -55,7 +56,6 @@ nav {
   position: absolute;
   top: 0;
   left: 5%;
-  z-index: 1;
   background-color: rgba(0, 0, 0, 0.9);
   min-width: 90%;
   border: 2px solid rgba(205, 45, 45, 0.75);
@@ -65,9 +65,9 @@ nav {
   display: none;
 }
 .menu .menu-collapse {
-  font: 5vw/5vw "Comic Sans MS", sans-serif;
-  font-size: 10vw;
-  line-height: 10vw;
+  font: 5vw/5vw "Reenie Beanie", "Comic Sans MS", sans-serif;
+  font-size: 20vw;
+  line-height: 20vw;
   margin-bottom: 5%;
   cursor: pointer;
   background: none;
