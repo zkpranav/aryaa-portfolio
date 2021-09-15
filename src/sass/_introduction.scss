@@ -1,6 +1,7 @@
 .introduction {
     margin-top: 10%;
     @include movie-poster();
+    text-transform: uppercase;
 
     .movie-main {
         padding-top: 4vw;
@@ -15,17 +16,16 @@
             display: block;
         }
 
-        span:nth-child(2) {
-            padding-left: 7vw;
-        }
+        // span:nth-child(2) {
+        //     padding-left: 7vw;
+        // }
 
         span:nth-child(3) {
-            text-transform: uppercase;
             font-size: 5vw;
+            padding-left: 5vw;
         }
 
         span:nth-child(5) {
-            text-transform: uppercase;
             font-size: 5vw;
         }
     }
@@ -45,5 +45,6 @@
     .movie-footer {
         padding: 4vw;
         padding-top: 0;
+        text-transform: initial;
     }
 }

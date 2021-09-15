@@ -36,6 +36,6 @@ a, a:visited, a:hover {
     &:hover {
         background-color: $primaryColor;
         border-color: opacify($secondaryColor, 1);
-        color: opacify($secondaryColor, 1);
+        color: opacify(saturate($secondaryColor, 100%), 1);
     }
 }
