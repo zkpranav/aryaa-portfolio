@@ -1,0 +1,51 @@
+.presents {
+    margin-top: 20vw;
+    text-transform: uppercase;
+    transform-origin: 50% 50%;
+    transform: rotate(-5deg);
+
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+
+    font: 4vw/4vw 'Pathway Gothic One', sans-serif;
+    line-height: 12vw;
+
+    p:first-child {
+        font-size: 12vw;
+        text-align: center;
+    }
+
+    .presents-container {
+        text-align: center;
+
+        div {
+            display: inline-block;
+            background-color: #fff;
+            height: 0.2rem;
+            width: 15vw;
+
+            margin-bottom: 0.3rem;
+        }
+
+        p {
+            font-size: 6vw;
+            display: inline-block;
+            padding-left: 2vw;
+            padding-right: 2vw;
+        }
+    }
+
+    p:last-child {
+        font-size: 5vw;
+        text-align: center;
+        line-height: 9vw;
+
+        .name {
+            font-size: 8vw;
+            font-weight: bold;
+            padding-left: 2vw;
+            padding-right: 2vw;
+        }
+    }
+}
