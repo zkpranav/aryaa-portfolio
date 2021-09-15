@@ -7,20 +7,24 @@
         font-size: 10vw;
         line-height: 10vw;
 
-        * {
+        p {
             margin-left: 65%;
         }
 
-        p:nth-child(2) {
+        span {
+            display: block;
+        }
+
+        span:nth-child(2) {
             padding-left: 7vw;
         }
 
-        p:nth-child(3) {
+        span:nth-child(3) {
             text-transform: uppercase;
             font-size: 5vw;
         }
 
-        p:nth-child(5) {
+        span:nth-child(5) {
             text-transform: uppercase;
             font-size: 5vw;
         }

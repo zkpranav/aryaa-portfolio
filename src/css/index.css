@@ -171,24 +171,26 @@ nav {
   align-items: stretch;
   font-size: 6vw;
   line-height: 6vw;
-  min-height: 100vh;
 }
 .introduction .movie-main {
   padding-top: 4vw;
   font-size: 10vw;
   line-height: 10vw;
 }
-.introduction .movie-main * {
+.introduction .movie-main p {
   margin-left: 65%;
 }
-.introduction .movie-main p:nth-child(2) {
+.introduction .movie-main span {
+  display: block;
+}
+.introduction .movie-main span:nth-child(2) {
   padding-left: 7vw;
 }
-.introduction .movie-main p:nth-child(3) {
+.introduction .movie-main span:nth-child(3) {
   text-transform: uppercase;
   font-size: 5vw;
 }
-.introduction .movie-main p:nth-child(5) {
+.introduction .movie-main span:nth-child(5) {
   text-transform: uppercase;
   font-size: 5vw;
 }
@@ -215,8 +217,44 @@ nav {
   align-items: stretch;
   font-size: 6vw;
   line-height: 6vw;
-  min-height: 100vh;
   border: 5vw solid rgba(205, 45, 45, 0.75);
+  font-size: 5vw;
+  line-height: 5vw;
+}
+.resume .movie-name {
+  font-size: 15vw;
+  line-height: 15vw;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: right;
+  margin-top: 10%;
+  margin-right: 4vw;
+}
+.resume .movie-name p > span {
+  display: block;
+}
+.resume .movie-main {
+  padding: 4vw;
+  margin-top: 40%;
+}
+.resume .movie-main p:nth-child(3), .resume .movie-main p:nth-child(4) {
+  margin: 2vw 2vw;
+}
+.resume .movie-main .skill {
+  display: inline-block;
+  font-size: 10vw;
+  line-height: 10vw;
+  padding: 0 2vw;
+}
+.resume .movie-footer {
+  padding: 4vw;
+  text-transform: uppercase;
+  font-size: 4vw;
+  line-height: 4vw;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /*# sourceMappingURL=index.css.map */

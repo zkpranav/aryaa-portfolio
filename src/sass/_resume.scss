@@ -1,4 +1,50 @@
 .resume {
     @include movie-poster();
     border: 5vw solid $primaryColor;
+    font-size: 5vw;
+    line-height: 5vw;
+
+
+    .movie-name {
+        font-size: 15vw;
+        line-height: 15vw;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-align: right;
+
+        margin-top: 10%;
+        margin-right: 4vw;
+
+        p > span {
+            display: block;
+        }
+    }
+
+    .movie-main {
+        padding: 4vw;
+        margin-top: 40%;
+
+        p:nth-child(3), p:nth-child(4) {
+            margin: 2vw 2vw;
+        }
+
+        .skill {
+            display: inline-block;
+            font-size: 10vw;
+            line-height: 10vw;
+            padding: 0 2vw;
+        }
+    }
+
+    .movie-footer {
+        padding: 4vw;
+        text-transform: uppercase;
+        font-size: 4vw;
+        line-height: 4vw;
+
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
 }
