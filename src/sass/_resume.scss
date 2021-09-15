@@ -1,0 +1,4 @@
+.resume {
+    @include movie-poster();
+    border: 5vw solid $primaryColor;
+}

@@ -1,22 +1,11 @@
 .introduction {
-    // temp styles
-    border: 2px solid $primaryColor;
-    font: 4vw/4vw 'Pathway Gothic One', sans-serif;
-
     margin-top: 10%;
-    // height: 75vh;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: stretch;
-
-    font-size: 6vw;
-    line-height: 6vw;
+    @include movie-poster();
 
     .movie-main {
         padding-top: 4vw;
         font-size: 10vw;
         line-height: 10vw;
-        
 
         * {
             margin-left: 65%;

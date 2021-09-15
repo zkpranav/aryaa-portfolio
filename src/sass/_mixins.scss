@@ -11,3 +11,16 @@ $breakpoints: ('iphone': '480px', 'ipad': '768px', 'macbook': '1024px', 'imac': 
         @content;
     }
 }
+
+@mixin movie-poster() {
+    border: 2px solid $primaryColor;
+    font: 4vw/4vw 'Pathway Gothic One', sans-serif;
+    
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+
+    font-size: 6vw;
+    line-height: 6vw;
+    min-height: 100vh;
+}
