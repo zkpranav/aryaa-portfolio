@@ -85,12 +85,12 @@ bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
          */
 
 		testAnimation()
-        controls.enabled = true
+        // controls.enabled = true
     } else {
         /**
          * TODO: Minimize canvas
          */
-        controls.enabled = false
+        // controls.enabled = false
     }
 })
 
@@ -113,20 +113,13 @@ renderer.outputEncoding = THREE.sRGBEncoding
  * GSAP animations
  */
 function testAnimation() {
-	const tl = gsap.timeline({
-		
-	})
+	const tl = gsap.timeline({})
 
 	tl.to(camera.position, {
 		z: 5,
 		duration: 2,
 		ease: 'Power2.easeOut'
 	})
-	// tl.to(camera.position, {
-	// 	z: 5,
-	// 	duration: 1,
-	// 	ease: 'Power2.easeOut'
-	// })
 }
 
 /**
