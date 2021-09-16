@@ -22,7 +22,7 @@ const scene = new THREE.Scene()
  */
 const geometry = new THREE.BoxGeometry(1, 1, 1, 16, 16, 16)
 const material = new THREE.MeshBasicMaterial({
-	color: '#ff0000',
+	color: 'hsla(165, 100%, 48%, 1)',
 	wireframe: true,
 })
 const cube = new THREE.Mesh(geometry, material)
@@ -63,7 +63,7 @@ const camera = new THREE.PerspectiveCamera(
 	100
 )
 // Move camera from (0, 0, 0)
-camera.position.z = 3
+camera.position.z = 50
 
 scene.add(camera)
 
@@ -81,12 +81,14 @@ const bedroomTrigger = document.querySelector('.bedroom-trigger')
 bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
     if (!controls.enabled) {
         /**
-         * Maximize canvas
+         * TODO: Maximize canvas
          */
+
+		testAnimation()
         controls.enabled = true
     } else {
         /**
-         * Minimize canvas
+         * TODO: Minimize canvas
          */
         controls.enabled = false
     }
@@ -106,6 +108,26 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
 // Set color encoding
 renderer.outputEncoding = THREE.sRGBEncoding
+
+/**
+ * GSAP animations
+ */
+function testAnimation() {
+	const tl = gsap.timeline({
+		
+	})
+
+	tl.to(camera.position, {
+		z: 5,
+		duration: 2,
+		ease: 'Power2.easeOut'
+	})
+	// tl.to(camera.position, {
+	// 	z: 5,
+	// 	duration: 1,
+	// 	ease: 'Power2.easeOut'
+	// })
+}
 
 /**
  * Animate function
