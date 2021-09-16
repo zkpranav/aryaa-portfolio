@@ -10,6 +10,7 @@ import { gsap } from 'gsap'
  * Fetch reference to canvas
  */
 const canvas = document.querySelector('.bedroom-canvas')
+const canvasContainer = document.querySelector('.bedroom')
 
 /**
  * Instantiate scene
@@ -31,8 +32,8 @@ scene.add(cube)
  * Global sizes object
  */
 const sizes = {
-	width: canvas.clientWidth,
-	height: canvas.clientHeight,
+	width: canvasContainer.clientWidth,
+	height: canvasContainer.clientHeight,
 }
 
 /**
@@ -40,8 +41,8 @@ const sizes = {
  */
 window.addEventListener('resize', function handleResizeInCanvas() {
 	// Update sizes
-	sizes.width = canvas.clientWidth
-	sizes.height = canvas.clientHeight
+	sizes.width = canvasContainer.clientWidth
+	sizes.height = canvasContainer.clientHeight
 
 	// Update camera
 	camera.aspect = sizes.width / sizes.height

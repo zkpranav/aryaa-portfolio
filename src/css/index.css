@@ -155,6 +155,7 @@ nav {
 .bedroom .bedroom-canvas {
   width: 100%;
   height: 100%;
+  outline: none;
 }
 .bedroom .bedroom-trigger {
   position: absolute;
