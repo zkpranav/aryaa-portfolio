@@ -181,6 +181,18 @@ nav {
   text-transform: uppercase;
   color: #00f5b8;
   transform-origin: 50% 50%;
+  animation-name: screening;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes screening {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .introduction {
