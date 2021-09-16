@@ -146,7 +146,7 @@ nav {
 .bedroom {
   position: relative;
   width: 90%;
-  height: 65vh;
+  height: 55vh;
   border: 2px solid rgba(205, 45, 45, 0.75);
   border-top: 0;
   margin-left: 5%;
@@ -306,6 +306,9 @@ footer .me {
   line-height: 5vw;
   text-align: center;
   text-transform: uppercase;
+}
+footer .me:hover {
+  text-decoration: underline;
 }
 footer .copyright {
   font-size: 4vw;

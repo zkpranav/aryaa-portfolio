@@ -11,6 +11,10 @@ footer {
         line-height: 5vw;
         text-align: center;
         text-transform: uppercase;
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .copyright {
