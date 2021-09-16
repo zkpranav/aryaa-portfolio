@@ -189,8 +189,8 @@ nav {
   display: flex;
   flex-flow: column nowrap;
   align-items: stretch;
-  font-size: 6vw;
-  line-height: 6vw;
+  font-size: 5vw;
+  line-height: 5vw;
   text-transform: uppercase;
 }
 .introduction .movie-main {
@@ -233,8 +233,8 @@ nav {
   display: flex;
   flex-flow: column nowrap;
   align-items: stretch;
-  font-size: 6vw;
-  line-height: 6vw;
+  font-size: 5vw;
+  line-height: 5vw;
   border: 5vw solid rgba(205, 45, 45, 0.75);
   font-size: 5vw;
   line-height: 5vw;
@@ -282,8 +282,8 @@ nav {
   display: flex;
   flex-flow: column nowrap;
   align-items: stretch;
-  font-size: 6vw;
-  line-height: 6vw;
+  font-size: 5vw;
+  line-height: 5vw;
 }
 .projects .movie-name {
   font-size: 10vw;
