@@ -289,4 +289,27 @@ nav {
   background-color: rgba(205, 45, 45, 0.75);
 }
 
+footer {
+  font: 4vw/4vw "Pathway Gothic One", sans-serif;
+  font-size: 6vw;
+  line-height: 6vw;
+  background-color: rgba(205, 45, 45, 0.75);
+  padding: 2vw;
+}
+footer .me {
+  font-size: 5vw;
+  line-height: 5vw;
+  text-align: center;
+  text-transform: uppercase;
+}
+footer .copyright {
+  font-size: 4vw;
+  line-height: 4vw;
+  text-align: center;
+  padding-top: 2vw;
+}
+footer .copyright span {
+  vertical-align: middle;
+}
+
 /*# sourceMappingURL=index.css.map */
