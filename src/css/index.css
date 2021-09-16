@@ -148,34 +148,37 @@ nav {
   width: 90%;
   height: 65vh;
   border: 2px solid rgba(205, 45, 45, 0.75);
-  margin: 10% 0 0 5%;
-  display: flex;
-  flex-flow: column nowrap;
-}
-.bedroom .screening {
-  padding: 2vw;
-  border-bottom: 2px solid rgba(205, 45, 45, 0.75);
-  background-color: rgba(205, 45, 45, 0.75);
-  overflow-x: hidden;
-}
-.bedroom .screening p {
-  font: 4vw/4vw "Pathway Gothic One", sans-serif;
-  font-size: 6vw;
-  line-height: 6vw;
-  text-transform: uppercase;
-  color: #00f5b8;
-  transform-origin: 50% 50%;
+  border-top: 0;
+  margin-left: 5%;
+  margin-top: 0;
 }
 .bedroom .bedroom-canvas {
   width: 100%;
-  height: auto;
-  flex-grow: 1;
+  height: 100%;
 }
 .bedroom .bedroom-trigger {
   position: absolute;
   bottom: 10%;
   left: calc(50% - ((95px + 1.4vw + 4px) / 2));
   padding: 0.25rem 0.5rem;
+}
+
+.screening {
+  margin-left: 5%;
+  margin-top: 10%;
+  padding: 2vw;
+  width: 90vw;
+  border: 2px solid rgba(205, 45, 45, 0.75);
+  background-color: rgba(205, 45, 45, 0.75);
+  overflow-x: hidden;
+}
+.screening p {
+  font: 4vw/4vw "Pathway Gothic One", sans-serif;
+  font-size: 6vw;
+  line-height: 6vw;
+  text-transform: uppercase;
+  color: #00f5b8;
+  transform-origin: 50% 50%;
 }
 
 .introduction {

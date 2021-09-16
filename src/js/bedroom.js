@@ -40,8 +40,8 @@ const sizes = {
  */
 window.addEventListener('resize', function handleResizeInCanvas() {
 	// Update sizes
-	sizes.width = canvas.innerWidth
-	sizes.height = canvas.innerHeight
+	sizes.width = canvas.clientWidth
+	sizes.height = canvas.clientHeight
 
 	// Update camera
 	camera.aspect = sizes.width / sizes.height
@@ -76,9 +76,6 @@ controls.enabled = false
  * Control toggle
  */
 const bedroomTrigger = document.querySelector('.bedroom-trigger')
-const canvasContainer = document.querySelector('.bedroom')
-
-const toggleTimeline = gsap.timeline()
 
 bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
     if (!controls.enabled) {
