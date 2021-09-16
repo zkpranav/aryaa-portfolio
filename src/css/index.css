@@ -222,21 +222,21 @@ nav {
 }
 .introduction .movie-main {
   padding-top: 4vw;
-  font-size: 10vw;
-  line-height: 10vw;
+  font-size: 7vw;
+  line-height: 7vw;
 }
 .introduction .movie-main p {
-  margin-left: 65%;
+  margin-left: 70%;
 }
 .introduction .movie-main span {
   display: block;
 }
 .introduction .movie-main span:nth-child(3) {
-  font-size: 5vw;
-  padding-left: 5vw;
+  font-size: 4vw;
+  padding-left: 3vw;
 }
 .introduction .movie-main span:nth-child(5) {
-  font-size: 5vw;
+  font-size: 4vw;
 }
 .introduction .movie-name {
   font-size: 12vw;
@@ -249,9 +249,17 @@ nav {
   transform: rotate(5deg);
 }
 .introduction .movie-footer {
+  font-size: 5vw;
+  line-height: 6vw;
   padding: 4vw;
   padding-top: 0;
   text-transform: initial;
+}
+.introduction .movie-footer button {
+  font: inherit;
+  margin-top: 4vw;
+  text-transform: uppercase;
+  padding: 2vw;
 }
 
 .resume {
@@ -264,7 +272,7 @@ nav {
   line-height: 5vw;
   border: 5vw solid rgba(205, 45, 45, 0.75);
   font-size: 5vw;
-  line-height: 5vw;
+  line-height: 6vw;
 }
 .resume .movie-name {
   font-size: 12vw;
@@ -283,7 +291,7 @@ nav {
   margin-top: 40%;
 }
 .resume .movie-main p:nth-child(3), .resume .movie-main p:nth-child(4) {
-  margin: 2vw 2vw;
+  margin: 2vw 0;
 }
 .resume .movie-main .skill {
   display: inline-block;

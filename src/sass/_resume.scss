@@ -2,7 +2,7 @@
     @include movie-poster();
     border: 5vw solid $primaryColor;
     font-size: 5vw;
-    line-height: 5vw;
+    line-height: 6vw;
 
 
     .movie-name {
@@ -25,7 +25,7 @@
         margin-top: 40%;
 
         p:nth-child(3), p:nth-child(4) {
-            margin: 2vw 2vw;
+            margin: 2vw 0;
         }
 
         .skill {

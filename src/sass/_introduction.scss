@@ -5,11 +5,11 @@
 
     .movie-main {
         padding-top: 4vw;
-        font-size: 10vw;
-        line-height: 10vw;
+        font-size: 7vw;
+        line-height: 7vw;
 
         p {
-            margin-left: 65%;
+            margin-left: 70%;
         }
 
         span {
@@ -17,12 +17,12 @@
         }
 
         span:nth-child(3) {
-            font-size: 5vw;
-            padding-left: 5vw;
+            font-size: 4vw;
+            padding-left: 3vw;
         }
 
         span:nth-child(5) {
-            font-size: 5vw;
+            font-size: 4vw;
         }
     }
 
@@ -39,8 +39,17 @@
     }
 
     .movie-footer {
+        font-size: 5vw;
+        line-height: 6vw;
         padding: 4vw;
         padding-top: 0;
         text-transform: initial;
+
+        button {
+            font: inherit;
+            margin-top: 4vw;
+            text-transform: uppercase;
+            padding: 2vw;
+        }
     }
 }
