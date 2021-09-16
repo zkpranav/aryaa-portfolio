@@ -2,9 +2,9 @@
   "name": "aryaa-portfolio",
   "version": "1.0.0",
   "description": "Himani Sharma's personal portfolio website",
-  "main": "index.js",
   "scripts": {
-    "dev": "parcel ./src/index.html"
+    "dev": "parcel ./src/index.html",
+    "build": "parcel build ./src/index.html"
   },
   "repository": {
     "type": "git",
@@ -24,5 +24,8 @@
   "dependencies": {
     "gsap": "^3.7.1",
     "three": "^0.132.2"
-  }
+  },
+  "browserslist": [
+    "> 0.5%, last 2 versions, not dead"
+  ]
 }
