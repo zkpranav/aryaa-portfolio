@@ -25,8 +25,8 @@ const material = new THREE.MeshBasicMaterial({
 	color: 'hsla(165, 100%, 48%, 1)',
 	wireframe: true,
 })
-const cube = new THREE.Mesh(geometry, material)
-scene.add(cube)
+const sphere = new THREE.Mesh(geometry, material)
+scene.add(sphere)
 
 /**
  * Global sizes object
@@ -63,7 +63,7 @@ const camera = new THREE.PerspectiveCamera(
 	100
 )
 // Move camera from (0, 0, 0)
-camera.position.z = 50
+camera.position.z = 30
 
 scene.add(camera)
 
@@ -85,7 +85,7 @@ let isCanvasActive = false
 bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
     if (!isCanvasActive) {
 		// Changing text
-		bedroomTrigger.innerHTML = 'Exit'
+		bedroomTrigger.innerHTML = 'Leave'
 
 		// Toggle pointer-events
 		canvas.style['pointer-events'] = 'initial'
@@ -131,29 +131,42 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 // Set color encoding
 renderer.outputEncoding = THREE.sRGBEncoding
 
-
 /**
  * GSAP animations
  */
 function openingAnimation() {
-	const tl = gsap.timeline()
 
-	tl.to(camera.position, {
+	gsap.to(camera.position, {
 		z: 5,
+		duration: 2,
+		ease: 'Power2.easeOut'
+	})
+
+	gsap.to(sphere.rotation, {
+		x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
+		y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
+		z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
 		duration: 2,
 		ease: 'Power2.easeOut'
 	})
 }
 
 function closingAnimation() {
-	const tl = gsap.timeline()
 
-	tl.to(camera.position, {
+	gsap.to(camera.position, {
 		x: 0,
 		y: 0,
-		z: 50,
+		z: 30,
 		duration: 2,
 		ease: 'Power1.easeIn'
+	})
+
+	gsap.to(sphere.rotation, {
+		x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
+		y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
+		z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
+		duration: 2,
+		ease: 'Power2.easeOut'
 	})
 }
 

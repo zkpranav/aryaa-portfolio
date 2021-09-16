@@ -11,7 +11,7 @@ menuTrigger.addEventListener('click', function handleMenuTriggerClick() {
         display: 'block',
         y: 0,
         opacity: 1,
-        duration: 0.25,
+        duration: 0.4,
         ease: 'Power2.easeOut'
     })
 })
@@ -21,7 +21,7 @@ menuCollapse.addEventListener('click', function handleMenuCollapseClick() {
         y: - (menu.clientHeight + 5),
         opacity: 0,
         display: 'none',
-        duration: 0.25,
+        duration: 0.4,
         ease: 'Power2.easeOut'
     })
 })
