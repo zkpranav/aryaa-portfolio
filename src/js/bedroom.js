@@ -77,20 +77,26 @@ controls.enabled = false
  * Control toggle
  */
 const bedroomTrigger = document.querySelector('.bedroom-trigger')
+// temp flag
+let isCanvasActive = false
 
 bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
-    if (!controls.enabled) {
+
+    if (!isCanvasActive) {
         /**
          * TODO: Maximize canvas
          */
 
+		canvas.style['pointer-events'] = 'initial'
 		testAnimation()
-        // controls.enabled = true
+		isCanvasActive = true
     } else {
         /**
          * TODO: Minimize canvas
          */
-        // controls.enabled = false
+
+		 canvas.style['pointer-events'] = 'none'
+		 isCanvasActive = false
     }
 })
 
