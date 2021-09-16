@@ -149,9 +149,11 @@ function closingAnimation() {
 	const tl = gsap.timeline()
 
 	tl.to(camera.position, {
+		x: 0,
+		y: 0,
 		z: 50,
 		duration: 2,
-		ease: 'Power2.easeIn'
+		ease: 'Power1.easeIn'
 	})
 }
 
