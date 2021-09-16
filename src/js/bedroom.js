@@ -82,7 +82,7 @@ const bedroomTrigger = document.querySelector('.bedroom-trigger')
 // temp flag
 let isCanvasActive = false
 
-bedroomTrigger.addEventListener('click', async function handleBedroomTrigger() {
+bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
     if (!isCanvasActive) {
 		// Changing text
 		bedroomTrigger.innerHTML = 'Leave'
@@ -93,7 +93,7 @@ bedroomTrigger.addEventListener('click', async function handleBedroomTrigger() {
         /**
          * TODO: Maximize canvas
          */
-		await openingAnimation()
+		openingAnimation()
 		isCanvasActive = true
 
 		// Toggle controls
@@ -135,21 +135,18 @@ renderer.outputEncoding = THREE.sRGBEncoding
  * GSAP animations
  */
 function openingAnimation() {
-	return new Promise((resolve, reject) => {
-		gsap.to(camera.position, {
-			z: 5,
-			duration: 2,
-			ease: 'Power2.easeOut'
-		})
-	
-		gsap.to(sphere.rotation, {
-			x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
-			y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
-			z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
-			duration: 2,
-			ease: 'Power2.easeOut',
-			onComplete: resolve
-		})
+	gsap.to(camera.position, {
+		z: 5,
+		duration: 2,
+		ease: 'Power2.easeOut'
+	})
+
+	gsap.to(sphere.rotation, {
+		x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
+		y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
+		z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
+		duration: 2,
+		ease: 'Power2.easeOut'
 	})
 }
 
