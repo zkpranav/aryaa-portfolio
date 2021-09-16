@@ -20,7 +20,7 @@ const scene = new THREE.Scene()
 /**
  * Test Object
  */
-const geometry = new THREE.BoxGeometry(1, 1, 1, 16, 16, 16)
+const geometry = new THREE.SphereGeometry(1, 8, 8)
 const material = new THREE.MeshBasicMaterial({
 	color: 'hsla(165, 100%, 48%, 1)',
 	wireframe: true,
