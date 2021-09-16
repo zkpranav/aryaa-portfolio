@@ -67,6 +67,8 @@ nav {
   border-top: 0;
   padding: 2.5%;
   list-style: none;
+  opacity: 0;
+  transform: translateY(-100%);
   display: none;
 }
 .menu .menu-collapse {

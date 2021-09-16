@@ -30,6 +30,9 @@ nav {
     padding: 2.5%;
     list-style: none;
 
+    opacity: 0;
+    transform: translateY(-100%);
+
     .menu-collapse {
         font: 5vw/5vw 'Reenie Beanie', 'Comic Sans MS', sans-serif;
         font-size: 20vw;
