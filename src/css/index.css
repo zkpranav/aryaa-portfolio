@@ -284,7 +284,6 @@ nav {
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
-  border-bottom: 2px solid rgba(205, 45, 45, 0.75);
   padding: 4vw;
   background-color: rgba(205, 45, 45, 0.75);
 }
