@@ -81,7 +81,6 @@ const bedroomTrigger = document.querySelector('.bedroom-trigger')
 let isCanvasActive = false
 
 bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
-
     if (!isCanvasActive) {
 		// Changing text
 		bedroomTrigger.innerHTML = 'Exit'
@@ -96,7 +95,7 @@ bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
 		isCanvasActive = true
     } else {
 		// Changing text
-		bedroomTrigger.innerHTML = '👀 Look Around'
+		bedroomTrigger.innerHTML = 'Look Around'
 
 		// Toggle pointer-events
 		canvas.style['pointer-events'] = 'none'
