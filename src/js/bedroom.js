@@ -1,5 +1,6 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { gsap } from 'gsap'
 
 /**
  * Debug UI --Pull before deployment--
@@ -8,7 +9,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 /**
  * Fetch reference to canvas
  */
-const canvas = document.querySelector('#bedroom-handle')
+const canvas = document.querySelector('.bedroom-canvas')
 
 /**
  * Instantiate scene
@@ -39,8 +40,8 @@ const sizes = {
  */
 window.addEventListener('resize', function handleResizeInCanvas() {
 	// Update sizes
-	sizes.width = window.innerWidth
-	sizes.height = window.innerHeight
+	sizes.width = canvas.innerWidth
+	sizes.height = canvas.innerHeight
 
 	// Update camera
 	camera.aspect = sizes.width / sizes.height
@@ -66,7 +67,7 @@ camera.position.z = 3
 scene.add(camera)
 
 
-// Camera controls -- Orbit -- Modify --
+// Camera controls -- Orbit -- TODO: Modify --
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls.enabled = false
@@ -74,11 +75,21 @@ controls.enabled = false
 /**
  * Control toggle
  */
-const bedroomToggle = document.querySelector('#bedroom-toggle')
-bedroomToggle.addEventListener('click', function handleBedroomToggle() {
+const bedroomTrigger = document.querySelector('.bedroom-trigger')
+const canvasContainer = document.querySelector('.bedroom')
+
+const toggleTimeline = gsap.timeline()
+
+bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
     if (!controls.enabled) {
+        /**
+         * Maximize canvas
+         */
         controls.enabled = true
     } else {
+        /**
+         * Minimize canvas
+         */
         controls.enabled = false
     }
 })
