@@ -6,7 +6,8 @@ const menuCollapse = document.querySelector('.menu-collapse')
 
 gsap.set(menu, {
     y: - (menu.clientHeight),
-    opacity: 0
+    opacity: 0,
+    display: 'block'
 })
 
 const tl = gsap.timeline()
