@@ -16,13 +16,22 @@
         pointer-events: none;
     }
 
-    .bedroom-trigger {
+    .bedroom-trigger-container {
         position: absolute;
-        bottom: 10%; 
+        bottom: 10%;
+        width: 100%;
         // Changes based on font-size (5.93 * font-size) + padding + border
-        left: calc(50% - ((95px + 1.4vw + 4px) / 2));
+        // left: calc(50% - ((95px + 1.4vw + 4px) / 2));
 
-        padding: 0.25rem 0.5rem;
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: center;
+        align-items: center;
+
+
+        .bedroom-trigger {
+            padding: 0.25rem 0.5rem;
+        }
     }
 }
 

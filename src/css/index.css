@@ -161,10 +161,16 @@ nav {
   outline: none;
   pointer-events: none;
 }
-.bedroom .bedroom-trigger {
+.bedroom .bedroom-trigger-container {
   position: absolute;
   bottom: 10%;
-  left: calc(50% - ((95px + 1.4vw + 4px) / 2));
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.bedroom .bedroom-trigger-container .bedroom-trigger {
   padding: 0.25rem 0.5rem;
 }
 

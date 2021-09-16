@@ -83,20 +83,29 @@ let isCanvasActive = false
 bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
 
     if (!isCanvasActive) {
+		// Changing text
+		bedroomTrigger.innerHTML = 'Exit'
+
+		// Toggle pointer-events
+		canvas.style['pointer-events'] = 'initial'
+
         /**
          * TODO: Maximize canvas
          */
-
-		canvas.style['pointer-events'] = 'initial'
-		testAnimation()
+		openingAnimation()
 		isCanvasActive = true
     } else {
+		// Changing text
+		bedroomTrigger.innerHTML = '👀 Look Around'
+
+		// Toggle pointer-events
+		canvas.style['pointer-events'] = 'none'
+
         /**
          * TODO: Minimize canvas
          */
-
-		 canvas.style['pointer-events'] = 'none'
-		 isCanvasActive = false
+		closingAnimation()
+		isCanvasActive = false
     }
 })
 
@@ -115,11 +124,12 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 // Set color encoding
 renderer.outputEncoding = THREE.sRGBEncoding
 
+
 /**
  * GSAP animations
  */
-function testAnimation() {
-	const tl = gsap.timeline({})
+function openingAnimation() {
+	const tl = gsap.timeline()
 
 	tl.to(camera.position, {
 		z: 5,
@@ -127,6 +137,17 @@ function testAnimation() {
 		ease: 'Power2.easeOut'
 	})
 }
+
+function closingAnimation() {
+	const tl = gsap.timeline()
+
+	tl.to(camera.position, {
+		z: 30,
+		duration: 2,
+		ease: 'Power2.easeIn'
+	})
+}
+
 
 /**
  * Animate function
