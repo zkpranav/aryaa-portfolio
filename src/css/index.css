@@ -257,6 +257,7 @@ nav {
 }
 .introduction .movie-footer button {
   font: inherit;
+  font-size: 5vw;
   margin-top: 4vw;
   text-transform: uppercase;
   padding: 2vw;
@@ -319,15 +320,35 @@ nav {
   align-items: stretch;
   font-size: 5vw;
   line-height: 5vw;
+  border-bottom: 0;
 }
 .projects .movie-name {
+  text-transform: uppercase;
+  text-align: center;
+  background-color: rgba(205, 45, 45, 0.75);
+}
+.projects .movie-name p:nth-child(1) {
   font-size: 10vw;
   line-height: 10vw;
   font-weight: bold;
-  text-transform: uppercase;
-  text-align: center;
   padding: 4vw;
-  background-color: rgba(205, 45, 45, 0.75);
+}
+.projects .movie-name p:nth-child(2) {
+  font-size: 5vw;
+  line-height: 5vw;
+  border: 2px solid #fff;
+  border-left: 0;
+  border-right: 0;
+  padding: 1vw 0;
+}
+.projects .movie-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  flex-grow: 1;
+}
+.projects .movie-main .project {
+  border: 2px solid rgba(205, 45, 45, 0.75);
 }
 
 footer {
