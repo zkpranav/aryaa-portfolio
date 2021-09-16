@@ -10,6 +10,8 @@ body {
   background-color: #201513;
   color: #ffffff;
   font-family: Helvetica, Arial, sans-serif;
+  overflow-x: hidden;
+  position: relative;
 }
 
 *, *::before, *::after {
