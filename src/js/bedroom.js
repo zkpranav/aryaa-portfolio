@@ -112,7 +112,7 @@ bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
 		isCanvasActive = false
 
 		// Toggle controls
-		controls.enabled = true
+		controls.enabled = false
     }
 })
 
