@@ -1,11 +1,30 @@
+import { gsap } from 'gsap'
+
 const menuTrigger = document.querySelector('.menu-trigger')
 const menu = document.querySelector('.menu')
 const menuCollapse = document.querySelector('.menu-collapse')
 
+gsap.set(menu, {
+    y: - (menu.clientHeight),
+    opacity: 0
+})
+
+const tl = gsap.timeline()
+
 menuTrigger.addEventListener('click', function handleMenuTriggerClick() {
-    menu.style.display = 'block'
+    tl.to(menu, {
+        y: 0,
+        opacity: 1,
+        duration: 0.25,
+        ease: 'Power2.easeOut'
+    })
 })
 
 menuCollapse.addEventListener('click', function handleMenuCollapseClick() {
-    menu.style.display = 'none'
+    tl.to(menu, {
+        y: - (menu.clientHeight + 5),
+        opacity: 0,
+        duration: 0.25,
+        ease: 'Power2.easeOut'
+    })
 })
