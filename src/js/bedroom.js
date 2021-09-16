@@ -71,6 +71,8 @@ scene.add(camera)
 // Camera controls -- Orbit -- TODO: Modify --
 const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
+controls.enableZoom = false
+controls.enablePan = false
 controls.enabled = false
 
 /**
@@ -93,6 +95,9 @@ bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
          */
 		openingAnimation()
 		isCanvasActive = true
+
+		// Toggle controls
+		controls.enabled = true
     } else {
 		// Changing text
 		bedroomTrigger.innerHTML = 'Look Around'
@@ -105,6 +110,9 @@ bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
          */
 		closingAnimation()
 		isCanvasActive = false
+
+		// Toggle controls
+		controls.enabled = true
     }
 })
 
