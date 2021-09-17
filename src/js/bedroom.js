@@ -13,6 +13,14 @@ const canvas = document.querySelector('.bedroom-canvas')
 const canvasContainer = document.querySelector('.bedroom')
 
 /**
+ * Global sizes object
+ */
+ const sizes = {
+	width: canvasContainer.clientWidth,
+	height: canvasContainer.clientHeight,
+}
+
+/**
  * Instantiate scene
  */
 const scene = new THREE.Scene()
@@ -30,14 +38,6 @@ const material = new THREE.MeshBasicMaterial({
 })
 const sphere = new THREE.Mesh(geometry, material)
 scene.add(sphere)
-
-/**
- * Global sizes object
- */
-const sizes = {
-	width: canvasContainer.clientWidth,
-	height: canvasContainer.clientHeight,
-}
 
 /**
  * Handle resize event
