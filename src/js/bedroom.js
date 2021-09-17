@@ -25,7 +25,7 @@ const scene = new THREE.Scene()
 
 const geometry = new THREE.SphereGeometry(1, 8, 8)
 const material = new THREE.MeshBasicMaterial({
-	color: '#cd2d2d',
+	color: '#32c39f',
 	wireframe: true,
 })
 const sphere = new THREE.Mesh(geometry, material)
@@ -145,8 +145,8 @@ renderer.outputEncoding = THREE.sRGBEncoding
  */
 
 // Utility functions
-const secondaryColor = new THREE.Color('#32c39f')
-const primaryColor = new THREE.Color('#cd2d2d')
+// const secondaryColor = new THREE.Color('#32c39f')
+// const primaryColor = new THREE.Color('#cd2d2d')
 
 // Test Animations
 function openingAnimation() {
@@ -154,15 +154,8 @@ function openingAnimation() {
 		gsap.to(camera.position, {
 			z: 5,
 			duration: 2,
-			ease: 'Power2.easeOut'
-		})
-
-		gsap.to(sphere.material.color, {
-			r: secondaryColor.r,
-			g: secondaryColor.g,
-			b: secondaryColor.b,
-			duration: 2,
-			ease: 'Power2.easeOut'
+			ease: 'Power2.easeOut',
+			onComplete: resolve
 		})
 	
 		gsap.to(sphere.rotation, {
@@ -171,7 +164,6 @@ function openingAnimation() {
 			z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
 			duration: 2,
 			ease: 'Power2.easeOut',
-			onComplete: resolve
 		})
 	})
 }
@@ -183,24 +175,16 @@ function closingAnimation() {
 			y: 0,
 			z: 30,
 			duration: 2,
-			ease: 'Power1.easeIn'
-		})
-
-		gsap.to(sphere.material.color, {
-			r: primaryColor.r,
-			g: primaryColor.g,
-			b: primaryColor.b,
-			duration: 2,
-			ease: 'Power2.easeOut'
+			ease: 'Power1.easeIn',
+			onComplete: resolve
 		})
 	
 		gsap.to(sphere.rotation, {
-			x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
-			y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
-			z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
+			x: 0,
+			y: 0,
+			z: 0,
 			duration: 2,
 			ease: 'Power2.easeOut',
-			onComplete: resolve
 		})
 	})
 }
