@@ -20,9 +20,12 @@ const scene = new THREE.Scene()
 /**
  * Test Object
  */
+// $primaryColor: #cd2d2d;
+// $secondaryColor: #32c39f;
+
 const geometry = new THREE.SphereGeometry(1, 8, 8)
 const material = new THREE.MeshBasicMaterial({
-	color: 'hsla(165, 100%, 48%, 1)',
+	color: '#cd2d2d',
 	wireframe: true,
 })
 const sphere = new THREE.Mesh(geometry, material)
@@ -76,43 +79,49 @@ controls.enablePan = false
 controls.enabled = false
 
 /**
- * Control toggle
+ * Toggle Interaction with Canvas
  */
 const bedroomTrigger = document.querySelector('.bedroom-trigger')
 // temp flag
 let isCanvasActive = false
 
-bedroomTrigger.addEventListener('click', function handleBedroomTrigger() {
+bedroomTrigger.addEventListener('click', async function handleBedroomTrigger() {
     if (!isCanvasActive) {
-		// Changing text
-		bedroomTrigger.innerHTML = 'Leave'
+		bedroomTrigger.removeEventListener('click', handleBedroomTrigger)
 
 		// Toggle pointer-events
 		canvas.style['pointer-events'] = 'initial'
 
-        /**
-         * TODO: Maximize canvas
-         */
-		openingAnimation()
+		// Flip flag
 		isCanvasActive = true
+
+		await openingAnimation()
+
+		// Changing text
+		bedroomTrigger.innerHTML = 'Leave'
 
 		// Toggle controls
 		controls.enabled = true
-    } else {
-		// Changing text
-		bedroomTrigger.innerHTML = 'Look Around'
 
+		bedroomTrigger.addEventListener('click', handleBedroomTrigger)
+    } else {
+		bedroomTrigger.removeEventListener('click', handleBedroomTrigger)
+		
 		// Toggle pointer-events
 		canvas.style['pointer-events'] = 'none'
 
-        /**
-         * TODO: Minimize canvas
-         */
-		closingAnimation()
-		isCanvasActive = false
-
 		// Toggle controls
 		controls.enabled = false
+
+		await closingAnimation()
+
+		// Changing text
+		bedroomTrigger.innerHTML = 'Look Around'
+
+		// Flip flag
+		isCanvasActive = false
+
+		bedroomTrigger.addEventListener('click', handleBedroomTrigger)
     }
 })
 
@@ -134,37 +143,65 @@ renderer.outputEncoding = THREE.sRGBEncoding
 /**
  * GSAP animations
  */
-function openingAnimation() {
-	gsap.to(camera.position, {
-		z: 5,
-		duration: 2,
-		ease: 'Power2.easeOut'
-	})
 
-	gsap.to(sphere.rotation, {
-		x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
-		y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
-		z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
-		duration: 2,
-		ease: 'Power2.easeOut'
+// Utility functions
+const secondaryColor = new THREE.Color('#32c39f')
+const primaryColor = new THREE.Color('#cd2d2d')
+
+// Test Animations
+function openingAnimation() {
+	return new Promise((resolve, reject) => {
+		gsap.to(camera.position, {
+			z: 5,
+			duration: 2,
+			ease: 'Power2.easeOut'
+		})
+
+		gsap.to(sphere.material.color, {
+			r: secondaryColor.r,
+			g: secondaryColor.g,
+			b: secondaryColor.b,
+			duration: 2,
+			ease: 'Power2.easeOut'
+		})
+	
+		gsap.to(sphere.rotation, {
+			x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
+			y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
+			z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
+			duration: 2,
+			ease: 'Power2.easeOut',
+			onComplete: resolve
+		})
 	})
 }
 
 function closingAnimation() {
-	gsap.to(camera.position, {
-		x: 0,
-		y: 0,
-		z: 30,
-		duration: 2,
-		ease: 'Power1.easeIn'
-	})
+	return new Promise((resolve, reject) => {
+		gsap.to(camera.position, {
+			x: 0,
+			y: 0,
+			z: 30,
+			duration: 2,
+			ease: 'Power1.easeIn'
+		})
 
-	gsap.to(sphere.rotation, {
-		x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
-		y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
-		z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
-		duration: 2,
-		ease: 'Power2.easeOut'
+		gsap.to(sphere.material.color, {
+			r: primaryColor.r,
+			g: primaryColor.g,
+			b: primaryColor.b,
+			duration: 2,
+			ease: 'Power2.easeOut'
+		})
+	
+		gsap.to(sphere.rotation, {
+			x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
+			y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
+			z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
+			duration: 2,
+			ease: 'Power2.easeOut',
+			onComplete: resolve
+		})
 	})
 }
 
