@@ -220,6 +220,10 @@ nav {
   line-height: 5vw;
   text-transform: uppercase;
 }
+.introduction .movie-name {
+  color: rgba(50, 195, 159, 0.75);
+  text-shadow: 0.5vw 0.5vw rgba(205, 45, 45, 0.75);
+}
 .introduction .movie-main {
   padding-top: 4vw;
   font-size: 7vw;
@@ -276,6 +280,10 @@ nav {
   line-height: 6vw;
 }
 .resume .movie-name {
+  color: rgba(50, 195, 159, 0.75);
+  text-shadow: 0.5vw 0.5vw rgba(205, 45, 45, 0.75);
+}
+.resume .movie-name {
   font-size: 12vw;
   line-height: 12vw;
   font-weight: bold;
@@ -325,9 +333,14 @@ nav {
   border-bottom: 0;
 }
 .projects .movie-name {
+  color: rgba(50, 195, 159, 0.75);
+  text-shadow: 0.5vw 0.5vw rgba(205, 45, 45, 0.75);
+}
+.projects .movie-name {
   text-transform: uppercase;
   text-align: center;
   background-color: rgba(205, 45, 45, 0.75);
+  color: #fff;
 }
 .projects .movie-name p:nth-child(1) {
   font-size: 10vw;
@@ -377,6 +390,7 @@ footer .copyright {
 }
 footer .copyright span {
   vertical-align: middle;
+  margin-top: 0.5vw;
 }
 
 /*# sourceMappingURL=index.css.map */

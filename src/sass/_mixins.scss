@@ -22,4 +22,10 @@ $breakpoints: ('iphone': '480px', 'ipad': '768px', 'macbook': '1024px', 'imac': 
 
     font-size: 5vw;
     line-height: 5vw;
+
+    .movie-name {
+        color: $secondaryColor;
+        $textShadowOffset: 0.5vw;
+        text-shadow: $textShadowOffset $textShadowOffset $primaryColor;
+    }
 }
