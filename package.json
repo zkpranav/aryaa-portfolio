@@ -18,7 +18,6 @@
   "homepage": "https://github.com/zkpranav/aryaa-portfolio#readme",
   "private": true,
   "devDependencies": {
-    "parcel": "^2.0.0-rc.0",
     "sass": "^1.39.2"
   },
   "dependencies": {
@@ -26,6 +25,6 @@
     "three": "^0.132.2"
   },
   "browserslist": [
-    "> 0.5%, last 2 versions, not dead"
+    "> 0.25%, not dead"
   ]
 }
