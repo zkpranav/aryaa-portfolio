@@ -1,5 +1,7 @@
 import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader'
+import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader'
 import { gsap } from 'gsap'
 
 /**
@@ -21,23 +23,74 @@ const canvasContainer = document.querySelector('.bedroom')
 }
 
 /**
+ * Loaders
+ */
+// Texture Loader
+const textureLoader = new THREE.TextureLoader()
+
+// Draco Loader
+const dracoLoader = new DRACOLoader()
+dracoLoader.setDecoderPath('draco/')
+
+// GLTF Loader
+const gltfLoader = new GLTFLoader()
+gltfLoader.setDRACOLoader(dracoLoader)
+
+/**
  * Instantiate scene
  */
 const scene = new THREE.Scene()
 
 /**
- * Test Object
+ * Textures
  */
-// $primaryColor: #cd2d2d;
-// $secondaryColor: #32c39f;
+function getBakedTexture(path) {
+	const bakedTexture = textureLoader.load(path)
+	bakedTexture.flipY = false
+	bakedTexture.encoding = THREE.sRGBEncoding
+	return bakedTexture
+}
 
-const geometry = new THREE.SphereGeometry(1, 8, 8)
-const material = new THREE.MeshBasicMaterial({
-	color: '#32c39f',
-	wireframe: true,
-})
-const sphere = new THREE.Mesh(geometry, material)
-scene.add(sphere)
+const bakedTexture1 = getBakedTexture('baked-1.jpg')
+const bakedTexture2 = getBakedTexture('baked-2.jpg')
+const bakedTexture3 = getBakedTexture('baked-3.jpg')
+
+/**
+ * Materials
+ */
+function getBakedMaterial(bakedTexture) {
+	return new THREE.MeshBasicMaterial({
+		map: bakedTexture,
+		wireframe: false
+	})
+}
+
+const bakedMaterial1 = getBakedMaterial(bakedTexture1)
+const bakedMaterial2 = getBakedMaterial(bakedTexture2)
+const bakedMaterial3 = getBakedMaterial(bakedTexture3)
+
+
+/**
+ * Model
+ */
+function addModelsToScene(path, bakedMaterial) {
+	gltfLoader.load(
+		path,
+		(gltf) => {
+			gltf.scene.traverse((child) => {
+				if (child instanceof THREE.Mesh) {
+					child.material = bakedMaterial
+				}
+			})
+	
+			scene.add(gltf.scene)
+		}
+	)
+}
+
+addModelsToScene('models-3.glb', bakedMaterial3)
+addModelsToScene('models-1.glb', bakedMaterial1)
+addModelsToScene('models-2.glb', bakedMaterial2)
 
 /**
  * Handle resize event
@@ -66,6 +119,8 @@ const camera = new THREE.PerspectiveCamera(
 	100
 )
 // Move camera from (0, 0, 0)
+camera.position.x = 30
+camera.position.y = 5
 camera.position.z = 30
 
 scene.add(camera)
@@ -76,6 +131,7 @@ const controls = new OrbitControls(camera, canvas)
 controls.enableDamping = true
 controls.enableZoom = false
 controls.enablePan = false
+controls.enableRotate = true
 controls.enabled = false
 
 /**
@@ -88,39 +144,31 @@ let isCanvasActive = false
 bedroomTrigger.addEventListener('click', async function handleBedroomTrigger() {
     if (!isCanvasActive) {
 		bedroomTrigger.removeEventListener('click', handleBedroomTrigger)
-
 		// Toggle pointer-events
 		canvas.style['pointer-events'] = 'initial'
-
 		// Flip flag
 		isCanvasActive = true
 
-		await openingAnimation()
+		openingAnimation()
 
 		// Changing text
 		bedroomTrigger.innerHTML = 'Leave'
-
 		// Toggle controls
 		controls.enabled = true
-
 		bedroomTrigger.addEventListener('click', handleBedroomTrigger)
     } else {
-		bedroomTrigger.removeEventListener('click', handleBedroomTrigger)
-		
+		bedroomTrigger.removeEventListener('click', handleBedroomTrigger)	
 		// Toggle pointer-events
 		canvas.style['pointer-events'] = 'none'
-
 		// Toggle controls
 		controls.enabled = false
 
-		await closingAnimation()
+		closingAnimation()
 
 		// Changing text
 		bedroomTrigger.innerHTML = 'Look Around'
-
 		// Flip flag
 		isCanvasActive = false
-
 		bedroomTrigger.addEventListener('click', handleBedroomTrigger)
     }
 })
@@ -143,27 +191,15 @@ renderer.outputEncoding = THREE.sRGBEncoding
 /**
  * GSAP animations
  */
-
-// Utility functions
-// const secondaryColor = new THREE.Color('#32c39f')
-// const primaryColor = new THREE.Color('#cd2d2d')
-
-// Test Animations
 function openingAnimation() {
 	return new Promise((resolve, reject) => {
 		gsap.to(camera.position, {
-			z: 5,
+			x: 12,
+			y: 10,
+			z: 12,
 			duration: 2,
 			ease: 'Power2.easeOut',
 			onComplete: resolve
-		})
-	
-		gsap.to(sphere.rotation, {
-			x: sphere.rotation.x + Math.floor(Math.random() * (2 * Math.PI)),
-			y: sphere.rotation.y + Math.floor(Math.random() * (2 * Math.PI)),
-			z: sphere.rotation.z + Math.floor(Math.random() * (2 * Math.PI)),
-			duration: 2,
-			ease: 'Power2.easeOut',
 		})
 	})
 }
@@ -171,24 +207,15 @@ function openingAnimation() {
 function closingAnimation() {
 	return new Promise((resolve, reject) => {
 		gsap.to(camera.position, {
-			x: 0,
-			y: 0,
+			x: 30,
+			y: 5,
 			z: 30,
 			duration: 2,
-			ease: 'Power1.easeIn',
+			ease: 'Power2.easeIn',
 			onComplete: resolve
-		})
-	
-		gsap.to(sphere.rotation, {
-			x: 0,
-			y: 0,
-			z: 0,
-			duration: 2,
-			ease: 'Power2.easeOut',
 		})
 	})
 }
-
 
 /**
  * Animate function
