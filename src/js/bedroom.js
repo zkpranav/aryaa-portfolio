@@ -116,7 +116,7 @@ const camera = new THREE.PerspectiveCamera(
 	45,
 	sizes.width / sizes.height,
 	0.1,
-	100
+	50
 )
 // Move camera from (0, 0, 0)
 camera.position.x = 30
@@ -128,10 +128,25 @@ scene.add(camera)
 
 // Camera controls -- Orbit -- TODO: Modify --
 const controls = new OrbitControls(camera, canvas)
-controls.enableDamping = true
-controls.enableZoom = false
 controls.enablePan = false
+
+// Damping controls
+controls.enableDamping = true
+controls.dampingFactor = 0.025
+
+// Zoom controls
+controls.enableZoom = false
+
+// Rotation controls
 controls.enableRotate = true
+// Vertical rotation
+controls.minPolarAngle = 0
+controls.maxPolarAngle = Math.PI / 2
+// Horizontal rotation
+controls.minAzimuthAngle = 0
+controls.maxAzimuthAngle = Math.PI / 2
+
+// Deactivating controls
 controls.enabled = false
 
 /**
@@ -198,7 +213,7 @@ function openingAnimation() {
 			y: 10,
 			z: 12,
 			duration: 2,
-			ease: 'Power2.easeOut',
+			ease: 'Power21.easeInOut',
 			onComplete: resolve
 		})
 	})
@@ -211,7 +226,7 @@ function closingAnimation() {
 			y: 5,
 			z: 30,
 			duration: 2,
-			ease: 'Power2.easeIn',
+			ease: 'Power1.easeInOut',
 			onComplete: resolve
 		})
 	})
